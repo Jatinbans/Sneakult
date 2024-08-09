@@ -3,6 +3,10 @@ const listingsSchema = new mongoose.Schema(
     {
         id:{
             type:mongoose.Schema.Types.ObjectId,
+            auto:true,
+        },
+        Userid:{
+            type:mongoose.Schema.Types.ObjectId,
             ref:'User',
             required:true,
         },
