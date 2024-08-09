@@ -1,4 +1,4 @@
-import { Posts } from "../models/postsmodels";
+import { Posts } from "../models/postsmodels.js";
 //create post
 export const createPost = async(req,res)=>{
     try{
@@ -10,7 +10,7 @@ export const createPost = async(req,res)=>{
     catch(error){
         res.status(500).json({error:error.message});
     }
-}
+};
 
 //get all posts
 export const getAllPosts = async(req,res)=>{
