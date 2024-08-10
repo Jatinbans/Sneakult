@@ -16,7 +16,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 //Routes
-app.use("/api/", router);
+app.use("/api", router);
 
 //Database connection
 mongoose.connect('mongodb://localhost:27017/Sneakult', {
