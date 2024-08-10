@@ -4,14 +4,14 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import morgan from "morgan";
 
-import reviewRoutes from './src/routes/review.routes.js';
+import reviewRoutes from './src/routes/review.routes.js'
 import postRoutes from './src/routes/post.routes.js'
 import listRoutes from './src/routes/list.routes.js'
 import paymentRoutes from './src/routes/payments.routes.js'
 import userRoutes from './src/routes/user.routes.js'
+import followerRoutes from './src/routes/followers.route.js'
+import followingRoutes from './src/routes/following.routes.js'
 
-
-// import followerRoutes from './src/routes/
 
 dotenv.config();
 const app = express();
@@ -28,8 +28,8 @@ app.use('/api/posts',postRoutes);
 app.use('/api/listings',listRoutes);
 app.use('/api/payments',paymentRoutes);
 app.use('/api/users',userRoutes);
-// app.use('/api/followers',followerRoutes);
-// app.use('/api/followings',followingRoutes);
+app.use('/api/followers',followerRoutes);
+app.use('/api/following',followingRoutes);
 
 //Database connection
 mongoose.connect('mongodb://localhost:27017/Sneakult', {
@@ -52,3 +52,6 @@ app.listen(PORT, ()=>{
     console.log(`Server is started on port ${PORT}`);
     
 })
+
+
+app.get('/',(req,res)=>{res.send("fhbfhrbh")})

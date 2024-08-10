@@ -8,9 +8,9 @@ import {
 
 } from "../controllers/user.controllers.js";
 const router = express.Router();
-router.post('/user',createUser)
-router.get('/user',getAllUsers)
-router.get('/user/:id',getUserById)
-router.put('/user/:id',updateUserById)
-router.delete('/user/:id',deleteUserById)
+router.post('/',createUser)
+router.get('/',getAllUsers)
+router.get('/:id',getUserById)
+router.put('/:id',updateUserById)
+router.delete('/:id',deleteUserById)
 export default router;
