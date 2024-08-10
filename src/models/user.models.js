@@ -1,36 +1,30 @@
 import mongoose from "mongoose";
 const userSchema = new mongoose.Schema(
     {
-        id:{
-            type:mongoose.Schema.Types.ObjectId,
-            auto:true,
+        name: {
+            type: String,
+            required: true,
+            trim: true,
 
         },
-        name:{
-            type:String,
-            required:true,
-            trim:true,
+        userName: {
+            type: String,
+            trim: true,
+        },
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+            trim: true,
+            lowercase: true,
 
         },
-        userName:{
-            type:String,
-            trim:true,
+        isEmailVerified: {
+            type: Boolean,
+            default: false,
 
         },
-        email:{
-            type:String,
-            required:true,
-            unique:true,
-            trim:true,
-            lowercase:true,
-
-        },
-        isEmailVerified:{
-            type:Boolean,
-            default:false,
-
-        },
-        location:{
+        location: {
             street: {
                 type: String,
                 trim: true,
@@ -51,18 +45,17 @@ const userSchema = new mongoose.Schema(
                 type: String,
                 trim: true,
             },
+        },
+        image: {
+            type: String,
+            trim: true,
 
         },
-        image:{
-            type:String,
-            trim:true,
-
-        },
-        role:{
-            type:[String],
-            enum:['buyer','seller'],
-            defaul:['buyer'],
+        role: {
+            type: [String],
+            enum: ['buyer', 'seller'],
+            defaul: ['buyer'],
         }
 
-},{timestamps:true})
+    }, { timestamps: true })
 export const User = mongoose.model("User", userSchema)
